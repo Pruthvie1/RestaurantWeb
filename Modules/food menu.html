@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>  <meta charset="UTF-8">
+    <title>Patil's Food Corner</title>
+    <body>
+    <link rel="stylesheet" href="foodmenu.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+ </body>
+  <header>
+  <ul>
+    <i class='fa fa-shopping-cart'>
+      <span class='counter'></span>
+    </i>
+  </ul>
+</header>
+<div class='row'>
+  <div class='product--green'>
+    <div class='product_inner'>
+      <img src="C:\Users\pruth\.atom\packages\atom-html-preview\vegbiryani.jpg" width='300'>
+      <p style="color:black;">Veg Hyderabadi Biryani</p>
+      <p style="color:black;">Includes Vegetables, Paneer, India Gate Rice,Cashewnut and other Indian Spices.[Protein:1.9gm, Carbohydrate:19.6gm] Serves For 2 People.</p>
+      <p style="color:black;">Price Rs.210</p>
+      <button onclick="window.location.href='checkout2.html';">Order Now</button>
+    </div>
+  </div>
+  <div class='product--orange'>
+    <div class='product_inner'>
+      <img src="C:\Users\pruth\.atom\packages\atom-html-preview\mutton.jpg" width='300'>
+      <p style="color:black;">Mutton Biryani</p>
+        <p style="color:black;">Includes 700gm Of Fresh Mutton.[Protein:2.9gm, Carbohydrate:25.5gm] Serves For 2 People.</p>
+      <p style="color:black;">Price Rs.345</p>
+      <button onclick="window.location.href='checkout3.html';">Order Now</button>
+    </div>
+  </div>
+  <div class='product--red'>
+    <div class='product_inner'>
+      <img src="C:\Users\pruth\.atom\packages\atom-html-preview\FishCurry.png" width='300'>
+      <p style="color:black;">Fish Curry</p>
+        <p style="color:black;">Enjoy the Chef's Special Fish Curry From Patil's Food Corner.</p>
+      <p style="color:black;">Price Rs.210</p>
+      <button onclick="window.location.href='checkout4.html';">Order Now</button>
+    </div>
+  </div>
+  <div class='product--green'>
+    <div class='product_inner'>
+      <img src="C:\Users\pruth\.atom\packages\atom-html-preview\MatarPaneer.png" width='300'>
+      <p style="color:black;">Matar Paneer</p>
+        <p style="color:black;">Serves For 2 People. With Extra Gravy</p>
+      <p style="color:black;">Price Rs.180</p>
+      <button onclick="window.location.href='checkout5.html';">Order Now</button>
+    </div>
+  </div>
+  <div class='product--yellow'>
+    <div class='product_inner'>
+      <img src="C:\Users\pruth\.atom\packages\atom-html-preview\VegeChowmein.png" width='300'>
+      <p style="color:black;">Veg Chow Mein</p>
+        <p style="color:black;">Contains Noodles, Capsicum, Carrot and Cabbage.[Medium Spicy] 2 Servings.[Calories:2793kcal].</p>
+      <p style="color:black;">Price Rs.230</p>
+      <button onclick="window.location.href='checkout6.html';">Order Now</button>
+    </div>
+</div>
+  <div class='product--pink'>
+    <div class='product_inner'>
+      <img src="C:\Users\pruth\.atom\packages\atom-html-preview\MixVeg.png" width='300'>
+      <p style="color:black;">Mix Veg Sabji</p>
+        <p style="color:black;">Includes 8 Types of Vegetables. With Extra Gravy. 2 Servings.</p>
+      <p style="color:black;">Price Rs.180</p>
+      <button onclick="window.location.href='checkout.html';">Order Now</button>
+    </div>
+    </div>
+<div class='product--yellow'>
+  <div class='product_inner'>
+    <img src="C:\Users\pruth\.atom\packages\atom-html-preview\pizza.png" width='300'>
+    <p style="color:black;">Veg Farmhouse Pizza</p>
+      <p style="color:black;">Enjoy the Chef's Special and Combination of onion, Capsicum, tomato & Grilled Mushroom.</p>
+    <p style="color:black;">Price Rs.430 (Large)</p>
+    <button onclick="window.location.href='checkout1.html';">Order Now</button>
+</div>
+<script>
+function OrderNow() {
+  counter++;
+  $(".counter")
+    .html(counter)
+    .animate(
+      {
+        opacity: "0"
+      },
+      300,
+      function () {
+        $(".counter").delay(300).animate({
+          opacity: "1"
+        });
+      }
+    );
+}
+
+// Ordernow Animation
+$("button")on("click", function () {
+  AddtoCart();
+  $(this)
+    .parent()
+    .parent()
+    .find(".product_overlay")
+    .css({
+      transform: " translateY(0px)",
+      opacity: "1",
+      transition: "all ease-in-out .45s"
+    })
+    delay(1500)
+    queue(function () {
+      $(this)
+        .css({
+          transform: "translateY(-500px)",
+          opacity: "0",
+          transition: "all ease-in-out .45s"
+        })
+        dequeue();
+    });
+});
+});
+</script>
+</body>
+</html>

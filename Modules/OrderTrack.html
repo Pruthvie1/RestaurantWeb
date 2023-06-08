@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Track Order</title>
+    <style>
+        ol.progtrckr {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+ol.progtrckr li {
+    display: inline-block;
+    text-align: center;
+    line-height: 3.5em;
+}
+
+ol.progtrckr[data-progtrckr-steps="2"] li { width: 49%; }
+ol.progtrckr[data-progtrckr-steps="3"] li { width: 33%; }
+ol.progtrckr[data-progtrckr-steps="4"] li { width: 24%; }
+ol.progtrckr[data-progtrckr-steps="5"] li { width: 19%; }
+ol.progtrckr[data-progtrckr-steps="6"] li { width: 16%; }
+ol.progtrckr[data-progtrckr-steps="7"] li { width: 14%; }
+ol.progtrckr[data-progtrckr-steps="8"] li { width: 12%; }
+ol.progtrckr[data-progtrckr-steps="9"] li { width: 11%; }
+
+ol.progtrckr li.progtrckr-done {
+    color: white;
+    border-bottom: 4px solid yellowgreen;
+}
+ol.progtrckr li.progtrckr-todo {
+    color: white;
+    border-bottom: 4px solid silver;
+}
+
+ol.progtrckr li:after {
+    content: "\00a0\00a0";
+}
+ol.progtrckr li:before {
+    position: relative;
+    bottom: -2.5em;
+    float: left;
+    left: 50%;
+    line-height: 1em;
+}
+ol.progtrckr li.progtrckr-done:before {
+    content: "\2713";
+    color: white;
+    background-color: yellowgreen;
+    height: 2.2em;
+    width: 2.2em;
+    line-height: 2.2em;
+    border: none;
+    border-radius: 2.2em;
+}
+ol.progtrckr li.progtrckr-todo:before {
+    content: "\039F";
+    color: silver;
+    background-color: white;
+    font-size: 2.2em;
+    bottom: -1.2em;
+}
+ol.progtrckr{
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-image: url("MisalPav.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    z-index: -1;
+}
+
+
+    </style>
+</head>
+<body>
+        <ol class="progtrckr" data-progtrckr-steps="5">
+            <li class="progtrckr-done">Order Accepted By Restaurant</li>
+            <li class="progtrckr-done">Delivery Boy Assigned</li>
+            <li class="progtrckr-todo">Preparing Food</li>
+            <li class="progtrckr-todo">Packed</li>
+            <li class="progtrckr-todo">Delivered</li>
+            </ol>
+</body>
+</html>

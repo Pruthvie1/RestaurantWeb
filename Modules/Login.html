@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial scale=1.0">
+<head>
+<title>Patil's Food Corner login</title>
+<link rel="stylesheet" href="login.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+  <a href="main.html"><h2>Patil's Food Corner</h2></a>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="http://localhost/signup.php" method="post">
+			<h1>Create Account</h1>
+			<input type="text" placeholder="Name" class="form-control" name="fullname"required/>
+      <input type="int" placeholder="Enter Your Mobile Number" pattern="^\d{3}\d{3}\d{4}$" class="form-control" name="mobilenumber" required/>
+
+      <label for="Gender">Gender</label>
+      <select id="Gender" name="gender" class="form-control" required>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+			<input type="email" placeholder="Email" class="form-control" name="email" required/>
+      <input title="Password must contains one digit from 0-9,and contains atleast one
+                    lowercase characters and one uppercase characters,Must contains one special
+                    symbols in the list @#$% and Password length atleast 8 character and maximum 12 character.
+                    Example- Citizen@123"
+                    type="password" class="form-control" placeholder="Password"required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^*_=+-]).{8,12}$" name="password" onchange="
+  this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
+  if(this.checkValidity()) form.pwd2.pattern = RegExp.escape(this.value);">
+
+			<button>Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="http://localhost/login.php" method="post">
+			<h1>Sign in</h1>
+
+			<input type="email" placeholder="Email" class="form-control" name="email" required />
+      <input title="Password must contains one digit from 0-9,and contains atleast one
+                    lowercase characters and one uppercase characters,Must contains one special
+                    symbols in the list @#$% and Password length atleast 8 character and maximum 12 character.
+                    Example- Citizen@123"
+                    type="password" class="form-control" placeholder="Password"required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^*_=+-]).{8,12}$" name="password" onchange="
+  this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
+  if(this.checkValidity()) form.pwd2.pattern = RegExp.escape(this.value);">
+			<a href="#">Forgot your password?</a>
+			<button>Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back Foodie!</h1>
+				<p>To keep enjoying our Meals please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Foodie!</h1>
+				<p>Enter your personal details and start food party with us.</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+const signUpButton = document.getElementById("signUp");
+const signInButton = document.getElementById("signIn");
+const container = document.getElementById("container");
+
+signUpButton.addEventListener("click", () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener("click", () => {
+	container.classList.remove("right-panel-active");
+});
+
+</script>
+</body>
+</html>

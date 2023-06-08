@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>  <meta charset="UTF-8">
+    <title>Patil's Food Corner</title>
+    <body>
+    <link rel="stylesheet" href="C:\Users\pruth\.atom\packages\atom-html-preview\maharashtra.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+ </body>
+  <header>
+  <ul>
+    <i class='fa fa-shopping-cart'>
+      <span class='counter'></span>
+    </i>
+  </ul>
+</header>
+<div class='row'>
+  <div class='product--green'>
+    <div class='product_inner'>
+      <img src="C:\Users\pruth\.atom\packages\atom-html-preview\puranpoli.jpg" width='300'>
+      <p style="color:black;">Puran Poli</p>
+      <p style="color:black;">It is made by stuffing chana, desiccated coconut, jaggery or cane sugar, and nutmeg powder into the flatbread which is made from wheat flour. [3 Puran Poli's]</p>
+      <p style="color:black;">Price Rs.210</p>
+      <button onclick="window.location.href='pay1.html';">Order Now</button>
+    </div>
+  </div>
+  <div class='product--orange'>
+    <div class='product_inner'>
+      <img src="C:\Users\pruth\.atom\packages\atom-html-preview\PudachiVadi.png" width='300'>
+      <p style="color:black;">Pudachi Vadi</p>
+      <p style="color:black;">Made from a mixture of dried desiccated coconut, coriander leaves, chilli powder, and other Indian spices.[Includes 8 Pieces]</p>
+      <p style="color:black;">Price Rs.110</p>
+      <button onclick="window.location.href='pay2.html';">Order Now</button>
+    </div>
+  </div>
+  <div class='product--red'>
+    <div class='product_inner'>
+      <img src="C:\Users\pruth\.atom\packages\atom-html-preview\pavbhaji.png" width='300'>
+      <p style="color:black;">Pav Bhaji</p>
+      <p style="color:black;">Includes More than Five Vegetables.Its Spicy and served With Indian Bread known as Pav.[6 Bread Pav's with 250ml Bhaji]</p>
+      <p style="color:black;">Price Rs.145</p>
+      <button onclick="window.location.href='pay3.html';">Order Now</button>
+    </div>
+  </div>
+  <div class='product--green'>
+    <div class='product_inner'>
+      <img src="C:\Users\pruth\.atom\packages\atom-html-preview\UkadicheModak.png" width='300'>
+      <p style="color:black;">Ukaliche Modak</p>
+      <p style="color:black;">It means Steamed Modak.The filling is made of fresh coconut and jaggery, the cover is made of Rice flour.[10 Pieces]</p>
+      <p style="color:black;">Price Rs.95</p>
+      <button onclick="window.location.href='pay4.html';">Order Now</button>
+    </div>
+  </div>
+  <div class='product--yellow'>
+    <div class='product_inner'>
+      <img src="C:\Users\pruth\.atom\packages\atom-html-preview\pandhrarassa.png" width='300'>
+      <p style="color:black;">Non Veg Pandhra Rassa</p>
+      <p style="color:black;">From the roots of Kolhapur Pandhra Rassa is a soup that is prepared from the broth of chicken or mutton with a base of coconut milk, sliced onion, cashew paste, chilli</p>
+      <p style="color:black;">Price Rs.230</p>
+      <button onclick="window.location.href='pay5.html';">Order Now</button>
+    </div>
+</div>
+  <div class='product--pink'>
+    <div class='product_inner'>
+      <img src="C:\Users\pruth\.atom\packages\atom-html-preview\MisalPav.png" width='300'>
+      <p style="color:black;">Misal Pav</p>
+      <p style="color:black;">It is made of Misal which is a spicy curry made of moth beans and Pav which is an Indian bread roll.[6 Bread Pav's & 250ml Misal]</p>
+      <p style="color:black;">Price Rs.100</p>
+      <button onclick="window.location.href='pay6.html';">Order Now</button>
+    </div>
+    </div>
+<div class='product--yellow'>
+  <div class='product_inner'>
+    <img src="C:\Users\pruth\.atom\packages\atom-html-preview\KothimbirVadi.png" width='300'>
+    <p style="color:black;">Kothimbir Vadi</p>
+    <p style="color:black;">Made by Mixing coriander leaves with besan and water along with some Indian spices [10 Pieces]</p>
+    <p style="color:black;">Price Rs.115</p>
+    <button onclick="window.location.href='pay7.html';">Order Now</button>
+</div>
+<script>
+function AddtoCart() {
+  counter++;
+  $(".counter")
+    .html(counter)
+    .animate(
+      {
+        opacity: "0"
+      },
+      300,
+      function () {
+        $(".counter").delay(300).animate({
+          opacity: "1"
+        });
+      }
+    );
+}
+
+// Add To Basket Animation
+$("button")on("click", function () {
+  AddtoCart();
+  $(this)
+    .parent()
+    .parent()
+    .find(".product_overlay")
+    .css({
+      transform: " translateY(0px)",
+      opacity: "1",
+      transition: "all ease-in-out .45s"
+    })
+    delay(1500)
+    queue(function () {
+      $(this)
+        .css({
+          transform: "translateY(-500px)",
+          opacity: "0",
+          transition: "all ease-in-out .45s"
+        })
+        dequeue();
+    });
+});
+});
+</script>
+</body>
+</html>
